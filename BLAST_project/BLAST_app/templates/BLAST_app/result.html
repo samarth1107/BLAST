@@ -1,0 +1,25 @@
+{% extends "BLAST_app/base.html" %}
+{% block content %}
+<div class="col-md-12 mb-5">
+        <article class="media content-section">
+          <div class="media-body">
+            <h2 class="article-content">Blast result page</h2>
+            <ul> 
+              {% for align_item in alignments %} 
+                  <li>
+                    {% if align_item|length < 100 %}
+                    <p>Query Sequence   : {{ align_item.seq1 }}</p>
+                    <p>Database Sequence: {{ align_item.seq2 }}</p>
+                    {% else %}
+                    <p>Query Sequence   : {{ align_item.seq1|truncatechars:100 }}...</p>
+                    <p>Database Sequence: {{ align_item.seq2|truncatechars:100 }}...</p>
+                    {% endif %}
+                    <h4>P-score {{ align_item.pscore }}  Score : {{ align_item.score}}</h4>
+                    <hr>
+                  </li> 
+              {% endfor %} 
+              </ul> 
+          </div>
+        </article>
+</div>
+{% endblock content %}

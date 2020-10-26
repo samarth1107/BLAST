@@ -1,0 +1,43 @@
+{% extends "BLAST_app/base.html" %}
+{% block content %}
+
+<div class="col-md-8 mb-5">
+  <article class="media content-section">
+    <div class="media-body">
+      <h2 class="article-content">Blast home page</h2>
+      <p>Enter your query sequence here  </p>
+      <br>
+      <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <br>
+        <button type='submit'>Submit</button>
+      </form>
+    </div>
+  </article>
+
+  <br>
+  <h2>What We Do</h2>
+  <hr>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis optio neque consectetur consequatur magni in nisi, natus beatae quidem quam odit commodi ducimus totam eum, alias, adipisci nesciunt voluptate. Voluptatum.</p>
+  <a class="btn btn-primary btn-lg" href="#">Call to Action &raquo;</a>
+</div>
+<div class="col-md-4 mb-5">
+  <h2>Default Parameters</h2>
+  <hr>
+  <address>
+    <br>Kmer length : 11
+    <br>Match/Mismatch score: 1/-1
+    <br>HSSP score: 1
+    <br>Score Threshold: 1
+    <br>
+    <br>Value for kartlin altschull statictics
+    <br>lambda: 1.09861
+    <br>K = 0.33333
+    <br>
+  </address>
+</div>
+
+
+{% endblock content %}
