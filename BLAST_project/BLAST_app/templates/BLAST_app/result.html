@@ -7,19 +7,29 @@
             <ul> 
               {% for align_item in alignments %} 
                   <li>
-                    {% if align_item|length < 100 %}
+                    {% if align_item.seq1|length < 80 %}
                     <p>Query Sequence   : {{ align_item.seq1 }}</p>
                     <p>Database Sequence: {{ align_item.seq2 }}</p>
                     {% else %}
-                    <p>Query Sequence   : {{ align_item.seq1|truncatechars:100 }}...</p>
-                    <p>Database Sequence: {{ align_item.seq2|truncatechars:100 }}...</p>
+                    <p>Query Sequence   : {{ align_item.seq1|truncatechars:80 }}...</p>
+                    <p>Database Sequence: {{ align_item.seq2|truncatechars:80 }}...</p>
                     {% endif %}
-                    <h4>P-score {{ align_item.pscore }}  Score : {{ align_item.score}}</h4>
+                    <p>Database ID : {{ align_item.DATABASE_SEQUENCE_INFO }}</p>
+                    <p>Database Postitions : {{ align_item.LOCUS_START }} - {{ align_item.LOCUS_END }}</p>
+                    <h5>Score : {{ align_item.score}}    Bit Score : {{ align_item.bit_score }}</h5>
+                    <h5>P-score {{ align_item.pscore }}</h5>
                     <hr>
                   </li> 
               {% endfor %} 
               </ul> 
+
+              <br>
+              <br>
+              <br>
+
+              <h4>Result also stored to output.txt file</h4>
           </div>
+
         </article>
 </div>
 {% endblock content %}

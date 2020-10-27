@@ -9,7 +9,8 @@ def home(request):
         form=HomeForm(request.POST)
         if form.is_valid():
             sequence = form.cleaned_data['sequence']
-            path_to_database = "sequence.fasta"
+            path_to_database = form.cleaned_data['data_base_path']
+            # path_to_database = "sequence.fasta"
             align_result = BLAST_DRIVER(sequence,path_to_database)
             return render(request, 'BLAST_app/result.html', {'alignments': align_result})
     form = HomeForm()
