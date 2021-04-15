@@ -1,7 +1,7 @@
 # BLAST (Basic local alignment tool)    
 This is a django based simple blast implementation with take query sequence and database as input and show first top 10 alignment 
 
-Contributors: samarth1107, ritvikg08 , Guardianofgotham 
+ 
 
 
 Home screen of web app
@@ -9,3 +9,6 @@ Home screen of web app
 
 Output screen
 ![alt text](https://github.com/samarth1107/BLAST/blob/master/output.jpeg)
+
+
+Contributors: samarth1107, ritvikg08 , Guardianofgotham
